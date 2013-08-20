@@ -6,7 +6,13 @@ Gem::Specification.new do |s|
     s.description = "A ruby dispatcher for warpgate job processing service"
     s.authors     = ["Sunshine Library"]
     s.email       = 'dev-ft@sunshine-library.org'
-    s.files       = ["lib/warpgate.rb"]
+    s.platform    = Gem::Platform::RUBY
+    s.required_ruby_version     = ">= 1.9"
+    s.required_rubygems_version = ">= 1.3.6"
+
+    s.files        = Dir.glob("lib/**/*")
+    s.require_path = 'lib'
+
     s.homepage    = 'https://github.com/SunshineLibrary/warpgate-gem'
     s.license     = 'MIT'
 
