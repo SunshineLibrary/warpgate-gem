@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
     s.description = "A ruby dispatcher for warpgate job processing service"
     s.authors     = ["Sunshine Library"]
     s.email       = 'dev-ft@sunshine-library.org'
-    s.files       = ["lib/hola.rb"]
+    s.files       = ["lib/warpgate.rb"]
     s.homepage    = 'https://github.com/SunshineLibrary/warpgate-gem'
     s.license     = 'MIT'
 end
