@@ -2,6 +2,10 @@ class Warpgate
 
   attr_accessor :role, :salt, :enabled, :connection_params
 
+  def initialize
+    self.enabled = true
+  end
+
   def self.setup
     @@singleton = Warpgate.new
     yield @@singleton

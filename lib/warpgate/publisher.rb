@@ -39,7 +39,12 @@ class Publisher
 
   def publish_to_exchange(exchange, task, options={})
     if exchange
-      exchange.publish(task.to_json, options)
+      message = task.params ? task.params.to_json : ''
+      options[:type] = task[:action]
+      aptions[:message_id] = task[:id]
+      options[:content_type] = 'application/json'
+      options[:app_id] = 'warpgate'
+      exchange.publish(message, options)
     else
       publish_log(task, reason='Warpgate could not connect to exchange')
     end
