@@ -9,4 +9,6 @@ Gem::Specification.new do |s|
     s.files       = ["lib/warpgate.rb"]
     s.homepage    = 'https://github.com/SunshineLibrary/warpgate-gem'
     s.license     = 'MIT'
+
+    s.add_dependency("bunny", ["~> 0.10.2"])
 end
