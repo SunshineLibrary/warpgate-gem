@@ -39,9 +39,9 @@ class Publisher
 
   def publish_to_exchange(exchange, task, options={})
     if exchange
-      message = task.params ? task.params.to_json : ''
+      message = (task[:params] || {}).to_json
       options[:type] = task[:action]
-      aptions[:message_id] = task[:id]
+      options[:message_id] = task[:id].to_s
       options[:content_type] = 'application/json'
       options[:app_id] = 'warpgate'
       exchange.publish(message, options)
