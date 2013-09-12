@@ -28,7 +28,6 @@ describe Warpgate do
       config.role = role
       config.salt = salt
       config.connection_params = connection_params
-      config.enabled = true
     end
   end
 
@@ -40,9 +39,12 @@ describe Warpgate do
 
   it "publishes task through a publisher" do
     task = {id: 1234, action: 'hello', role: 'role'}
+
     publisher = double(Publisher)
     publisher.should_receive(:publish).with(task)
     Publisher.should_receive(:new).and_return(publisher)
+
     Warpgate.publish task
   end
+
 end
