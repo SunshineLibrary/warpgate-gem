@@ -16,5 +16,6 @@ Gem::Specification.new do |s|
     s.homepage    = 'https://github.com/SunshineLibrary/warpgate-gem'
     s.license     = 'MIT'
 
-    s.add_dependency("bunny", ["~> 0.10.2"])
+    s.add_dependency("bunny", ["~> 0.10.2"]) # amqp client
+    s.add_development_dependency 'guard-rspec'
 end
